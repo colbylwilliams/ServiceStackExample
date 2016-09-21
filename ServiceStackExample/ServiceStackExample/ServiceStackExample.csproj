@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A17B60E-7326-4A49-8BFA-D47C413E265A}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ServiceStackExample</RootNamespace>
+    <AssemblyName>ServiceStackExample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyServiceClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.5.0\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.4.5.0\lib\portable-net45+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\packages\ServiceStack.Client.4.5.0\lib\portable-net45+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.HttpClient">
+      <HintPath>..\packages\ServiceStack.HttpClient.4.5.0\lib\portable-net45+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.HttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>
